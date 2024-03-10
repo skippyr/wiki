@@ -1,49 +1,15 @@
 <!DOCTYPE html>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width" />
-<title>Wiki - libtdk</title>
+<title>wiki - libtdk</title>
 <link rel="stylesheet" href="style.css">
 <div class="center-container">
   <img alt="" src="assets/ornament.webp" />
   <h1>libtdk</h1>
-  <p>Terminal Development Kit</p>
+  <p>Terminal Development Kit - Documentation</p>
   <p>* This documentation refers to v8.0.0.<br /><a href="https://github.com/skippyr/libtdk" target="_blank">View Source Code</a></p>
   <h2>About</h2>
-  <p>A simple C99 terminal manipulation library for Linux and Windows that is capable of handling some terminal properties, styles and key readings with UTF-8 encoding.</p>
+  <p>This is a simple C99 terminal manipulation library for Linux and Windows that can be used to develop cross-platform terminal application using C and C++. In summary, it includes features to manipulate terminal properties, styles and key events encoded in UTF-8.</p>
   <p>Designed to be an alternative to curses-like libraries, it offers a solid base for creating general purpose terminal based softwares, while leaving room to full-feature libraries to be built upon for more specific use cases.</p>
-  <h2>Standard Streams</h2>
-  <p>A process running in a terminal is always connected to three standard data streams, those are:</p>
-  <ul>
-    <li><strong>standard input (</strong><code>tdk_Stream_Input</code><strong>)</strong> from where it may read events or characters.</li>
-    <li><strong>standard output (</strong><code>tdk_Stream_Output</code><strong>):</strong> to where it may send regular tense messages.</li>
-    <li><strong>standard error (</strong><code>tdk_Stream_Error</code><strong>):</strong> to where it may send error tense messages.</li>
-  </ul>
-  <p>By default, the standard streams are usually connected to the process (TTY). However, all operating systems allow you to redirect them to other files by using shell scripting languages. You can check the status of those streams by using the function <code>tdk_isTTY</code>.</p>
-  <h2>Functions</h2>
-  <h3>tdk_isTTY Function</h3>
-  <h4>Declaration</h4>
-  <pre><code>int tdk_isTTY(int stream);</code></pre>
-  <h4>Brief</h4>
-  <p>Checks if a standard stream is connected to a terminal process (TTY).</p>
-  <h4>Parameters</h4>
-  <ul>
-    <li><strong>stream:</strong> the standard stream to be checked. It may be <code>tdk_Stream_Input</code>, <code>tdk_Stream_Output</code> or <code>tdk_Stream_Error</code>.</li>
-  </ul>
-  <h4>Return Value</h4>
-  <p>It returns 1 if it is a TTY and 0 otherwise.</p>
-  <h4>Example</h4>
-  <pre><code>#include &lt;tdk.h&gt;
-
-#define BOOLEAN(a_value) (a_value ? "true" : "false")
-
-int main(void) {
-  tdk_writeLine("TTY Statuses");
-  tdk_writeLine("------------");
-  tdk_writeLine(":: Input : %s.\n", BOOLEAN(tdk_isTTY(tdk_Stream_Input)));
-  tdk_writeLine(":: Output: %s.\n", BOOLEAN(tdk_isTTY(tdk_Stream_Output)));
-  tdk_writeLine(":: Error : %s.\n", BOOLEAN(tdk_isTTY(tdk_Stream_Error)));
-  return 0;
-}</code></pre>
-<footer>
-  <p><strong>≥v≥v&ensp;Here Are Dragons!&ensp;≥v≥</strong><br />Made with love by skippyr &lt;3</p>
-</footer>
+  <p>Throughout this documentation, you will learn the basic features of a terminal and how to use libtdk's functions to manipulate them.</p>
+</div>
