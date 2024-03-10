@@ -14,7 +14,14 @@
   <p>Throughout this documentation, you will learn the basic features of a terminal and how to use libtdk's functions to manipulate them.</p>
   <h2>What Is A Terminal</h2>
   <p>The terminal is a simple human-computer interface that allow people to interact with an operating system through a text based-command interpreter software called "shell".</p>
-  <p>In the old days, a terminal used to be a real machine, but in the modern era its behavior is emulated through a software: the "terminal emulator". The term "terminal" in this documentation will assume this meaning.</p>
+  <p>In the old days, a terminal used to be a real machine, but in the modern era its behavior is emulated through a software called "terminal emulator". The term "terminal" in this documentation will assume this meaning.</p>
+  <h2>Terminal Components</h2>
+  <p>Each operating system decide specify components to build their own terminal API system and built-in software. However, there are some components that are common to all software of this type:</p>
+  <ul>
+    <li><strong>standard streams:</strong> a serie of standard data streams that processes running in a terminal can use to read and output data. Some of these streams may contain specifc buffers of characters and/or events.</li>
+    <li><strong>screen:</strong> usually a window in a desktop environment where it can write data outputted by an active running process. The terminal also keeps a buffer in memory where it holds information about the characters and properties of each cell in its screen.</li>
+    <li><strong>input devices:</strong> even though not exactly part of the terminal itself, input devices like a computer keyboard and mouse play the role of sending event/characters for a terminal to manipulate and allow an user to interact with it.</li>
+  </ul>
 </div>
 <footer>
   <p><strong>≥v≥v&ensp;Here Are Dragons!&ensp;≥v≥</strong><br />Made with love by skippyr &lt;3</p>
