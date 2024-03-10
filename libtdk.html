@@ -7,7 +7,7 @@
   <img alt="" src="assets/ornament.webp" />
   <h1>libtdk</h1>
   <p>Terminal Development Kit</p>
-  <p>* This documentation refers to v8.0.0.<br /><a href="https://github.com/skippyr/libtdk">View Source Code</a></p>
+  <p>* This documentation refers to v8.0.0.<br /><a href="https://github.com/skippyr/libtdk" target="_blank">View Source Code</a></p>
   <h2>About</h2>
   <p>A simple C99 terminal manipulation library for Linux and Windows that is capable of handling some terminal properties, styles and key readings with UTF-8 encoding.</p>
   <p>Designed to be an alternative to curses-like libraries, it offers a solid base for creating general purpose terminal based softwares, while leaving room to full-feature libraries to be built upon for more specific use cases.</p>
@@ -29,6 +29,8 @@
   <ul>
     <li><strong>stream:</strong> the standard stream to be checked. It may be <code>tdk_Stream_Input</code>, <code>tdk_Stream_Output</code> or <code>tdk_Stream_Error</code>.</li>
   </ul>
+  <h4>Return Value</h4>
+  <p>It returns 1 if it is a TTY and 0 otherwise.</p>
   <h4>Example</h4>
   <pre><code>#include &lt;tdk.h&gt;
 
@@ -41,8 +43,7 @@ int main(void) {
   tdk_writeLine(":: Output: %s.\n", BOOLEAN(tdk_isTTY(tdk_Stream_Output)));
   tdk_writeLine(":: Error : %s.\n", BOOLEAN(tdk_isTTY(tdk_Stream_Error)));
   return 0;
-}
-  </code></pre>
+}</code></pre>
 <footer>
   <p><strong>≥v≥v&ensp;Here Are Dragons!&ensp;≥v≥</strong><br />Made with love by skippyr &lt;3</p>
 </footer>

@@ -16,6 +16,13 @@ code {
   font-size: 0.9rem;
 }
 
+footer {
+  font-size: smaller;
+  padding-bottom: 1rem;
+  padding-top: 2rem;
+  text-align: center;
+}
+
 h1 {
   text-align: center;
 }
@@ -24,13 +31,12 @@ h1 + p {
   text-align: center;
 }
 
-footer {
-  font-size: smaller;
-  padding-bottom: 1rem;
-  padding-top: 2rem;
-  text-align: center;
-}
-
 img {
   width: 100%;
+}
+
+pre {
+  background-color: #fff0df;
+  padding: 0.5rem;
+  overflow: scroll;
 }
