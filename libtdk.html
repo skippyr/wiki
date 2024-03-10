@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<title>Wiki - libtdk - Home</title>
+<link rel="stylesheet" href="../style.css">
+
+<div class="reading-container">
+	<h1>libtdk</h1>
+	<h2>About</h2>
+	<p>A simple C99 terminal manipulation library for Linux and Windows that is capable of handling some terminal properties, styles and key readings with UTF-8 encoding.</p>
+	<p>Designed to be an alternative to curses-like libraries, it offers a solid base for creating general purpose terminal based softwares, while leaving room to full-feature libraries to be built upon for more specific use cases.</p>
+	<h2>Introduction</h2>
+	<p>Terminals are a basic human-computer interface that allows people to interact with an operating system through the use of a shell.</p>
+	<p>Its properties can be manipulated through the use of a specific language of codes, called "virtual terminal sequences" or "ANSI escape sequences", and exclusive API calls to the operating system they are running into.</p>
+	<p>The terminal also manipulates its own data streams. However, with the advent and evolution of Unicode, the operating systems have also diverged in the way they encode graphemes, creating a serie of issues related to character encoding.</p>
+	<p>Inspired by the simple interface present in the C# language, this library was developed to provide the missing features from the standard C library to manipulate terminals in a way that is cross-platform and that uses UTF-8 encoding.</p>
+	<h2>Standard Streams</h2>
+	<p>Every terminal process contains three standard data streams from which it can receive and send information:</p>
+	<ul>
+		<li><strong>standard input</strong> (<code>tdk_Stream_Input</code>)<strong>:</strong> it is used to obtain events and input from a user.</li>
+		<li><strong>standard output</strong> (<code>tdk_Stream_Output</code>)<strong>:</strong> it is used to output regular tense messages.</li>
+		<li><strong>standard error</strong> (<code>tdk_Stream_Error</code>)<strong>:</strong> it is used to output error tense messages.</li>
+	</ul>
+	<p>These streams may be connected to a terminal window, therefore creating a TTY, or to a file. The flow of those streams can be changed by the use of shell scripting language. You may check the status of each stream by using <code>tdk_isTTY</code> function.</p>
+</div>
+<footer>
+	<p><strong>≥v≥v&ensp;Here Are Dragons!&ensp;≥v≥</strong><br />Made with love by skippyr <3</p>
+</footer>

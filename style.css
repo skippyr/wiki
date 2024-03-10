@@ -1,0 +1,26 @@
+body
+{
+	font-family: sans-serif;
+}
+
+h1
+{
+	padding-bottom: 2rem;
+	padding-top: 1rem;
+	text-align: center;
+}
+
+footer
+{
+	font-size: small;
+	padding-bottom: 1rem;
+	padding-top: 2rem;
+	text-align: center;
+}
+
+.reading-container
+{
+	width: min(90%,800px);
+	margin-left: auto;
+	margin-right: auto;
+}
