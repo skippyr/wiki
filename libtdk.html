@@ -22,13 +22,7 @@
         <p>The terminal is a simple human-computer interface that allow people to interact with an operating system through a text based-command interpreter software called "shell".</p>
         <p>In the old days, a terminal used to be a real machine, but in the modern era its behavior is emulated through a software called "terminal emulator". The term "terminal" in this documentation will assume this meaning.</p>
         <h2>Terminal Components</h2>
-        <p>Each operating system decides the components that builds their own terminal API. However, there are some components that are common to all software of this type:</p>
-        <ul>
-            <li><strong>window:</strong> a window that displays the output of an active process. The terminal also keeps a buffer with the contents that it displays.</li>
-            <li><strong>cursor:</strong> a special coordinate on the terminal window that is used as reference for writting output.</li>
-            <li><strong>standard streams:</strong> a serie of standard data streams that an active process may use to read and output data. Some of these streams contain buffers of characters and/or events.</li>
-            <li><strong>input devices:</strong> input devices like a keyboard and mouse send characters/events for a terminal to manipulate and allow an user to interact with it.</li>
-        </ul>
+        <p>Each operating system decides the components that builds their own terminal API. However, there are some components that are common to all software of this type. Those are:</p>
         <h3>Window</h3>
         <p>A graphical window on a desktop environment or the whole monitor in case of embeded operating system terminals. It displays the output of an active running process. The terminal also keeps a buffer with the contents and properties to display.</p>
         <p>The window is composed by multiple cell of characters, spread horizontally, in columns, and vertically, in rows. To get the coordinate of a cell, an origin position at the top left corner of the window, where column and row are both zero, is considered. From there, the values of column and row increase going right and down respectively.</p>
@@ -43,6 +37,10 @@
             <li><strong>standard error or stderr (</strong><code>tdk_Stream_Error</code><strong>):</strong> where it can output error tense messages.</li>
         </ul>
         <p>Each of these streams may be connected to a terminal (TTY) that will be providing user interactions or be a file in case of stream redirections and pipelines. You can check if a stream is a TTY by using the <code>tdk_isTTY</code> function.</p>
+        <p>The standard output and error streams are writtable and you can write to them by using the <code>tdk_write</code>, <code>tdk_writeLine</code>, <code>tdk_writeError</code> and <code>tdk_writeErrorLine</code>.</p>
+        <h3>Input Devices</h3>
+        <p>Even though not exactly part of a terminal nowadays, input devices like a keyboard and mouse send character/events to a terminal input buffer and allow an user to interact with it.</p>
+        <p>For simplicity and compatibility, this library only allows you to track synchronous key events by using the <code>tdk_readKeyEvent</code>.</p>
     </div>
     <footer>
         <p><strong>≥v≥v&ensp;Here Be Dragons!&ensp;≥v≥</strong><br />Made with love by skippyr &lt;3</p>
