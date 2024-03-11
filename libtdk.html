@@ -59,6 +59,16 @@
             <li><strong>hex/rgb palette:</strong> this palette contains over 16.500.000 colors and it is very popular in the graphic design field. Terminals allow you to use them through a "truecolor" feature. You can set a color from this palette by using the <code>tdk_setHEXColor</code> and <code>tdk_setRGBColor</code> functions.</li>
         </ul>
         <p>Any color that you choose to apply must affect a certain terminal layer, that can be: the foreground (<code>tdk_Layer_Foreground</code>) or the background (<code>tdk_Layer_Background</code>).</p>
+        <h2>Effects</h2>
+        <p>Terminals can support a range of text effects. By using the <code>tdk_setEffect</code> function, you can set the following effects:</p>
+        <ul>
+            <li><strong>Italic (</strong><code>tdk_Effect_Italic</code><strong>):</strong> it makes the text look curly. It may require the use of a font with italic style to be seen.</li>
+            <li><strong>Underline (</strong><code>tdk_Effect_Underline</code><strong>):</strong> it draws a horizontal line below the text.</li>
+            <li><strong>Blinking (</strong><code>tdk_Effect_Blinking</code><strong>):</strong> it makes the text blink indefinetely over time.</li>
+            <li><strong>Reverse Video(</strong><code>tdk_Effect_ReverseVideo</code><strong>):</strong> it swaps the foreground and background colors.</li>
+            <li><strong>Conceal(</strong><code>tdk_Effect_Conceal</code><strong>):</strong> it makes the text invisible or hard to see.</li>
+            <li><strong>Strikethrough(</strong><code>tdk_Effect_Strikethrough</code><strong>):</strong> it draws a horizontal line crossing into the middle of the text.</li>
+        </ul>
     </div>
     <footer>
         <p><strong>≥v≥v&ensp;Here Be Dragons!&ensp;≥v≥</strong><br />Made with love by skippyr &lt;3</p>
