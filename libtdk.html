@@ -35,7 +35,14 @@
         <p>The window may appear in many different dimensions. You can get the total of columns and rows that compose the terminal window at a given moment by using the <code>tdk_getWindowDimensions</code> function.</p>
         <h3>Cursor</h3>
         <p>A special coordinate in the window that is used as reference when writting output onto the window. The terminal usually highlights this coordinate in the window using a specific shape that may be visible or not. You can manipulate those cursor properties by using the <code>tdk_getCursorCoordinate</code>, <code>tdk_setCursorShape</code> and <code>tdk_setCursorVisibility</code> functions.</p>
-        <h3></h3>
+        <h3>Standard Streams</h3>
+        <p>Any terminal process that is active at a given moment has access to three standard data streams, those are:</p>
+        <ul>
+            <li><strong>standard input or stdin (</strong><code>tdk_Stream_Input</code><strong>):</strong> from where it can read characters/events.</li>
+            <li><strong>standard output or stdout (</strong><code>tdk_Stream_Output</code><strong>):</strong> where it can output regular tense messages.</li>
+            <li><strong>standard error or stderr (</strong><code>tdk_Stream_Error</code><strong>):</strong> where it can output error tense messages.</li>
+        </ul>
+        <p>Each of these streams may be connected to a terminal (TTY) that will be providing user interactions or be a file in case of stream redirections and pipelines. You can check if a stream is a TTY by using the <code>tdk_isTTY</code> function.</p>
     </div>
     <footer>
         <p><strong>≥v≥v&ensp;Here Be Dragons!&ensp;≥v≥</strong><br />Made with love by skippyr &lt;3</p>
