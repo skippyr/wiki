@@ -29,6 +29,11 @@
             <li><strong>standard streams:</strong> a serie of standard data streams that an active process may use to read and output data. Some of these streams contain buffers of characters and/or events.</li>
             <li><strong>input devices:</strong> input devices like a keyboard and mouse send characters/events for a terminal to manipulate and allow an user to interact with it.</li>
         </ul>
+        <h3>Window</h3>
+        <p>A graphical window on a desktop environment or the whole monitor in case of embeded operating system terminals. It displays the output of an active running process. The terminal also keeps a buffer with the contents and properties to display.</p>
+        <p>The window is composed by multiple cell of characters, spread horizontally, in columns, and vertically, in rows. To get the coordinate of a cell, an origin position at the top left corner of the window, where column and row are both zero, is considered. From there, the values of column and row increase going right and down respectively.</p>
+        <p>The window may appear in many different dimensions. You can get the total of columns and rows that compose the terminal window by using the <code>tdk_getWindowDimensions</code> function.</p>
+        <h3>Cursor</h3>
     </div>
     <footer>
         <p><strong>≥v≥v&ensp;Here Be Dragons!&ensp;≥v≥</strong><br />Made with love by skippyr &lt;3</p>
