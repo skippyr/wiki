@@ -41,6 +41,24 @@
         <h3>Input Devices</h3>
         <p>Even though not exactly part of a terminal nowadays, input devices like a keyboard and mouse send character/events to a terminal input buffer and allow an user to interact with it.</p>
         <p>For simplicity and compatibility, this library only allows you to track synchronous key events by using the <code>tdk_readKeyEvent</code>.</p>
+        <h2>Colors And Layers</h2>
+        <p>Modern terminals usually support two palettes:</p>
+        <ul>
+            <li><strong>xterm palette:</strong> a palette of 256 specific colors. The first 16 colors have names and contain both a regular and light variants, these are also the ones defined in a terminal theme, thus they provide the best compatibility with those themes:</li>
+            <ul>
+                <li>black (<code>tdk_Color_Black</code>/<code>tdk_Color_LightBlack</code>): same as values 0 and 8.</li>
+                <li>red (<code>tdk_Color_Red</code>/<code>tdk_Color_LightRed</code>): same as values 1 and 9.</li>
+                <li>green (<code>tdk_Color_Green</code>/<code>tdk_Color_LightGreen</code>): same as values 2 and 10.</li>
+                <li>yellow (<code>tdk_Color_Yellow</code>/<code>tdk_Color_LightYellow</code>): same as values 3 and 11.</li>
+                <li>blue (<code>tdk_Color_Blue</code>/<code>tdk_Color_LightBlue</code>): same as values 4 and 12.</li>
+                <li>magenta (<code>tdk_Color_Magenta</code>/<code>tdk_Color_LightMagenta</code>): same as values 5 and 13.</li>
+                <li>cyan (<code>tdk_Color_Cyan</code>/<code>tdk_Color_LightCyan</code>): same as values 6 and 14.</li>
+                <li>white (<code>tdk_Color_White</code>/<code>tdk_Color_LightWhite</code>): same as values 7 and 15.</li>
+            </ul>
+            <p>You can set a color from this palette by using the <code>tdk_set256Color</code> function.</p>
+            <li><strong>hex/rgb palette:</strong> this palette contains over 16.500.000 colors and it is very popular in the graphic design field. Terminals allow you to use them through a "truecolor" feature. You can set a color from this palette by using the <code>tdk_setHEXColor</code> and <code>tdk_setRGBColor</code> functions.</li>
+        </ul>
+        <p>Any color that you choose to apply must affect a certain terminal layer, that can be: the foreground (<code>tdk_Layer_Foreground</code>) or the background (<code>tdk_Layer_Background</code>).</p>
     </div>
     <footer>
         <p><strong>≥v≥v&ensp;Here Be Dragons!&ensp;≥v≥</strong><br />Made with love by skippyr &lt;3</p>

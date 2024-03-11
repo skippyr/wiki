@@ -59,11 +59,6 @@ img
     width: 100%;
 }
 
-li + li
-{
-    margin-top: 1rem;
-}
-
 pre
 {
     background-color: #fff0df;
