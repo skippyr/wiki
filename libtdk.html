@@ -1,28 +1,37 @@
 <!DOCTYPE html>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width" />
-<title>wiki - libtdk</title>
-<link rel="stylesheet" href="style.css">
-<div class="center-container">
-  <img alt="" src="assets/ornament.webp" />
-  <h1>libtdk</h1>
-  <p>Terminal Development Kit - Documentation</p>
-  <p>* This documentation refers to v8.0.0.<br /><a href="https://github.com/skippyr/libtdk" target="_blank">View Source Code</a></p>
-  <h2>About</h2>
-  <p>This is a simple C99 terminal manipulation library for Linux and Windows that can be used to develop cross-platform terminal application using C and C++. In summary, it includes features to manipulate terminal properties, styles and key events encoded in UTF-8.</p>
-  <p>Designed to be an alternative to curses-like libraries, it offers a solid base for creating general purpose terminal based softwares, while leaving room to full-feature libraries to be built upon for more specific use cases.</p>
-  <p>Throughout this documentation, you will learn the basic features of a terminal and how to use libtdk's functions to manipulate them.</p>
-  <h2>What Is A Terminal</h2>
-  <p>The terminal is a simple human-computer interface that allow people to interact with an operating system through a text based-command interpreter software called "shell".</p>
-  <p>In the old days, a terminal used to be a real machine, but in the modern era its behavior is emulated through a software called "terminal emulator". The term "terminal" in this documentation will assume this meaning.</p>
-  <h2>Terminal Components</h2>
-  <p>Each operating system decide specify components to build their own terminal API system and built-in software. However, there are some components that are common to all software of this type:</p>
-  <ul>
-    <li><strong>standard streams:</strong> a serie of standard data streams that processes running in a terminal can use to read and output data. Some of these streams may contain specifc buffers of characters and/or events.</li>
-    <li><strong>screen:</strong> usually a window in a desktop environment where it can write data outputted by an active running process. The terminal also keeps a buffer in memory where it holds information about the characters and properties of each cell in its screen.</li>
-    <li><strong>input devices:</strong> even though not exactly part of the terminal itself, input devices like a computer keyboard and mouse play the role of sending event/characters for a terminal to manipulate and allow an user to interact with it.</li>
-  </ul>
-</div>
-<footer>
-  <p><strong>≥v≥v&ensp;Here Are Dragons!&ensp;≥v≥</strong><br />Made with love by skippyr &lt;3</p>
-</footer>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>wiki - libtdk</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="sideMenu"></div>
+    <div class="centerContainer">
+        <img alt="" src="assets/ornament.webp" />
+        <h1>libtdk</h1>
+        <p>Terminal Development Kit - Documentation</p>
+        <p>* This documentation refers to v8.0.0.<br /><a href="https://github.com/skippyr/libtdk" target="_blank">View Source Code</a></p>
+        <h2>About</h2>
+        <p>This is a simple C99 terminal manipulation library for Linux and Windows that can be used to develop cross-platform terminal application using C and C++. In summary, it includes features to manipulate terminal properties, styles and key events encoded in UTF-8.</p>
+        <p>Designed to be an alternative to curses-like libraries, it offers a solid base for creating general purpose terminal based softwares, while leaving room to full-feature libraries to be built upon for more specific use cases.</p>
+        <p>Throughout this documentation, you will learn the basics of the terminal and how to use libtdk's functions to manipulate it.</p>
+        <h2>What Is A Terminal</h2>
+        <p>The terminal is a simple human-computer interface that allow people to interact with an operating system through a text based-command interpreter software called "shell".</p>
+        <p>In the old days, a terminal used to be a real machine, but in the modern era its behavior is emulated through a software called "terminal emulator". The term "terminal" in this documentation will assume this meaning.</p>
+        <h2>Terminal Components</h2>
+        <p>Each operating system decides the components that builds their own terminal API. However, there are some components that are common to all software of this type:</p>
+        <ul>
+            <li><strong>window:</strong> a window that displays the output of an active process. The terminal also keeps a buffer with the contents that it displays.</li>
+            <li><strong>cursor:</strong> a special coordinate on the terminal window that is used as reference for writting output.</li>
+            <li><strong>standard streams:</strong> a serie of standard data streams that an active process may use to read and output data. Some of these streams contain buffers of characters and/or events.</li>
+            <li><strong>input devices:</strong> input devices like a keyboard and mouse send characters/events for a terminal to manipulate and allow an user to interact with it.</li>
+        </ul>
+    </div>
+    <footer>
+        <p><strong>≥v≥v&ensp;Here Be Dragons!&ensp;≥v≥</strong><br />Made with love by skippyr &lt;3</p>
+    </footer>
+</body>
+</html>
