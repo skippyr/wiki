@@ -6,18 +6,19 @@
     <link rel="stylesheet" href="../../style.css" />
     <script src="script.js" defer></script>
     <script src="../../script.js" defer></script>
-    <title>c-function tdk_getWindowDimensions</title>
+    <title data-type="function">tdk_getWindowDimensions</title>
 </head>
 <body>
     <div class="navigation-menu"></div>
-    <code class="c-function-declaration">#include &lt;tdk.h&gt;</code>
-    <p class="c-function-brief">Gets the total of columns and rows in the terminal window.</p>
-    <ul class="c-function-parameters">
+    <main></main>
+    <code class="function-declaration">#include &lt;tdk.h&gt;</code>
+    <p class="function-brief">Gets the total of columns and rows in the terminal window.</p>
+    <ul class="function-parameters">
         <li><code>dimensions</code>: a pointer to a struct <code>tdk_Dimensions</code> that receives the window dimensions.</li>
     </ul>
-    <p class="c-function-return-value">On success, it returns value 0.</p>
-    <p class="c-function-return-value">On failure, it returns value -1. It fails if:</p>
-    <ul class="c-function-return-value">
+    <p class="function-return-value">On success, it returns value 0.</p>
+    <p class="function-return-value">On failure, it returns value -1. It fails if:</p>
+    <ul class="function-return-value">
         <li>On Windows, if the standard output and error streams are being redirected or piped.</li>
         <li>On Linux, if all the standard streams are being redirected or piped.</li>
     </ul>

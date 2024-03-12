@@ -9,39 +9,55 @@ let g_navigationMenuOptions = {
         "Functions": ["tdk_getWindowDimensions", "tdk_getCursorCoordinate", "tdk_isTTY"]
     }
 };
-let g_tableOfContents = document.querySelector(".table-of-contents");
-let g_navigationMenu = document.querySelector(".navigation-menu");
-let g_title = document.querySelector("title");
-let title = g_title.innerHTML;
-if (g_title.innerHTML.includes("c-function"))
+
+function createTitle()
 {
-    title = `${g_title.innerHTML.split(" ")[1]} Function`;
+    let title = document.querySelector("title");
+    let type = title.getAttribute("data-type");
+    if (title.innerHTML === "Home Page")
+    {
+        title.innerHTML += ` | Wiki`;
+        return;
+    }
+    else if (title.innerHTML === g_name)
+    {
+        title.innerHTML += ` (${g_version}) | Wiki`;
+        return;
+    }
+    title.innerHTML += ` ${type[0].toUpperCase() + type.slice(1)} | ${g_name} (${g_version}) | Wiki`;
 }
-else if (g_title.innerHTML.includes("c-struct"))
+function createTableOfContents()
 {
-    title = `${g_title.innerHTML.split(" ")[1]} Structure`;
-}
-g_title.innerHTML = `${title} | Wiki`;
-if (g_tableOfContents)
-{
-    g_tableOfContents.innerHTML += `<ul>`;
-    Object.keys(g_navigationMenuOptions).forEach((key) => {
-        g_tableOfContents.innerHTML += `<li><a href="src/${key}/index.html">${key}</a></li>`;
-    });
-    g_tableOfContents.innerHTML += `</ul>`;
-}
-if (g_navigationMenu)
-{
-    g_navigationMenu.innerHTML += `<a href="../../index.html">Go Back To Main Page</a>`;
-    g_navigationMenu.innerHTML += `<ul>`;
-    Object.keys(g_navigationMenuOptions[g_name]).forEach((key) => {
-        g_navigationMenu.innerHTML += `<li>${key}</li><ul>`;
-        g_navigationMenuOptions[g_name][key].forEach((subKey) => {
-            g_navigationMenu.innerHTML += Array.isArray(subKey)
-                ? `<li><a href="index.html#${subKey[1]}">${subKey[0]}</a></li>`
-                : `<li><a href="${subKey}.html">${subKey}</a></li>`;
+    let tableOfContents = document.querySelector(".table-of-contents");
+    if (tableOfContents)
+    {
+        tableOfContents.innerHTML += `<ul>`;
+        Object.keys(g_navigationMenuOptions).forEach((key) => {
+            tableOfContents.innerHTML += `<li><a href="src/${key}/index.html">${key}</a></li>`;
         });
-        g_navigationMenu.innerHTML += `</ul>`;
-    });
-    g_navigationMenu.innerHTML += `</ul>`;
+        tableOfContents.innerHTML += `</ul>`;
+    }
 }
+function createNavigationMenu()
+{
+    let navigationMenu = document.querySelector(".navigation-menu");
+    if (navigationMenu)
+    {
+        navigationMenu.innerHTML += `<a href="../../index.html">Go Back To Main Page</a>`;
+        navigationMenu.innerHTML += `<ul>`;
+        Object.keys(g_navigationMenuOptions[g_name]).forEach((key) => {
+            navigationMenu.innerHTML += `<li>${key}</li><ul>`;
+            g_navigationMenuOptions[g_name][key].forEach((subKey) => {
+                navigationMenu.innerHTML += Array.isArray(subKey)
+                    ? `<li><a href="index.html#${subKey[1]}">${subKey[0]}</a></li>`
+                    : `<li><a href="${subKey}.html">${subKey}</a></li>`;
+            });
+            navigationMenu.innerHTML += `</ul>`;
+        });
+        navigationMenu.innerHTML += `</ul>`;
+    }
+}
+
+createTitle();
+createTableOfContents();
+createNavigationMenu();
