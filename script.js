@@ -11,7 +11,17 @@ let g_navigationMenuOptions = {
 };
 let g_tableOfContents = document.querySelector(".table-of-contents");
 let g_navigationMenu = document.querySelector(".navigation-menu");
-
+let g_title = document.querySelector("title");
+let title = g_title.innerHTML;
+if (g_title.innerHTML.includes("c-function"))
+{
+    title = `${g_title.innerHTML.split(" ")[1]} Function`;
+}
+else if (g_title.innerHTML.includes("c-struct"))
+{
+    title = `${g_title.innerHTML.split(" ")[1]} Structure`;
+}
+g_title.innerHTML = `${title} | Wiki`;
 if (g_tableOfContents)
 {
     g_tableOfContents.innerHTML += `<ul>`;
@@ -22,6 +32,7 @@ if (g_tableOfContents)
 }
 if (g_navigationMenu)
 {
+    g_navigationMenu.innerHTML += `<a href="../../index.html">Go Back To Main Page</a>`;
     g_navigationMenu.innerHTML += `<ul>`;
     Object.keys(g_navigationMenuOptions[g_name]).forEach((key) => {
         g_navigationMenu.innerHTML += `<li>${key}</li><ul>`;
