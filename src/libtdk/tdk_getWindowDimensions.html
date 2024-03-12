@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>tdk_getWindowDimensions Function: libtdk (${VERSION}) | wiki</title>
+    <link rel="stylesheet" href="../../style.css" />
+    <script src="../../script.js" defer></script>
+    <script src="libtdk.js" defer></script>
+</head>
+<body>
+    <div class="centerContainer">
+        <img alt="" src="../../assets/ornament.webp" />
+        <h1>libtdk</h1>
+        <p>Terminal Development Kit - Documentation (${VERSION})</p>
+        <p><a href="https://github.com/skippyr/libtdk" target="_blank">View Source Code</a><br /><a href="libtdk.html">Go Back To Main Page</a></p>
+        <h2>tdk_getWindowDimensions Function</h2>
+        <h3>Declaration</h3>
+        <pre><code>#include &lt;tdk.h&gt;
+
+int tdk_getWindowDimensions(struct tdk_Dimensions* dimensions);</code></pre>
+        <h3>About</h3>
+        <p>Gets the total of columns and rows present in the terminal window.</p>
+        <h3>Parameters</h3>
+        <ul>
+            <li><code>dimensions</code>: a pointer to a <a href="tdk_Dimensions.html"><code>tdk_Dimensions</code></a> struct that receives the terminal window dimensions.</li>
+        </ul>
+        <h3>Return Value</h3>
+        <p>If the function succeeds, the return value is 0.</p>
+        <p>If the function fails, the return value is -1. It fails if:</p>
+        <ul>
+            <li>On Windows, the standard output and error streams are being redirected or piped.</li>
+            <li>On Linux, all the standard streams are being redirected or piped.</li>
+        </ul>
+        <p></p>
+        <h3>Example</h3>
+        <pre><code>#include &lt;tdk.h&gt;
+
+static struct tdk_Dimensions g_windowDimensions;
+
+int main(void)
+{
+    if (tdk_getWindowDimensions(&g_windowDimensions))
+    {
+        tdk_writeErrorLine("main: could not get the terminal window dimensions.");
+        return 1;
+    }
+    tdk_writeLine(":: Total of columns: %hu.", g_windowDimensions.totalOfColumns);
+    tdk_writeLine(":: Total of rows   : %hu.", g_windowDimensions.totalOfRows);
+    return 0;
+}</code></pre>
+    </div>
+    <footer>
+        <p><strong>≥v≥v&ensp;Here Be Dragons!&ensp;≥v≥</strong><br />Made with love by skippyr &lt;3</p>
+    </footer>
+</body>
+</html>

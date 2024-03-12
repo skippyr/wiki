@@ -3,17 +3,17 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>wiki - libtdk</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
+    <title>Main Page: libtdk (${VERSION}) | wiki</title>
+    <link rel="stylesheet" href="../../style.css" />
+    <script src="../../script.js" defer></script>
+    <script src="libtdk.js" defer></script>
 </head>
 <body>
-    <div class="sideMenu"></div>
     <div class="centerContainer">
-        <img alt="" src="assets/ornament.webp" />
+        <img alt="" src="../../assets/ornament.webp" />
         <h1>libtdk</h1>
-        <p>Terminal Development Kit - Documentation</p>
-        <p>* This documentation refers to v8.0.0.<br /><a href="https://github.com/skippyr/libtdk" target="_blank">View Source Code</a></p>
+        <p>Terminal Development Kit - Documentation (${VERSION})</p>
+        <p><a href="https://github.com/skippyr/libtdk" target="_blank">View Source Code</a><br /></p>
         <h2>About</h2>
         <p>This is a simple C99 terminal manipulation library for Linux and Windows that can be used to develop cross-platform terminal application using C and C++. In summary, it includes features to manipulate terminal properties, styles and key events encoded in UTF-8.</p>
         <p>Designed to be an alternative to curses-like libraries, it offers a solid base for creating general purpose terminal based softwares, while leaving room to full-feature libraries to be built upon for more specific use cases.</p>
@@ -26,7 +26,7 @@
         <h3>Window</h3>
         <p>A graphical window on a desktop environment or the whole monitor in case of embeded operating system terminals. It displays the output of an active running process. The terminal also keeps a buffer with the contents and properties to display.</p>
         <p>The window is composed by multiple cell of characters, spread horizontally, in columns, and vertically, in rows. To get the coordinate of a cell, an origin position at the top left corner of the window, where column and row are both zero, is considered. From there, the values of column and row increase going right and down respectively.</p>
-        <p>The window may appear in many different dimensions. You can get the total of columns and rows that compose the terminal window at a given moment by using the <code>tdk_getWindowDimensions</code> function.</p>
+        <p>The window may appear in many different dimensions. You can get the total of columns and rows that compose the terminal window at a given moment by using the <a href="tdk_getWindowDimensions.html"><code>tdk_getWindowDimensions</code></a> function.</p>
         <h3>Cursor</h3>
         <p>A special coordinate in the window that is used as reference when writting output onto the window. The terminal usually highlights this coordinate in the window using a specific shape that may be visible or not. You can manipulate those cursor properties by using the <code>tdk_getCursorCoordinate</code>, <code>tdk_setCursorShape</code> and <code>tdk_setCursorVisibility</code> functions.</p>
         <h3>Standard Streams</h3>
