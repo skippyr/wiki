@@ -1,22 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cousine:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
-:root
-{
-    --codeColor: #fef2d8;
-    --urlColor: #d60720;
-}
-
 .centerContainer
 {
     margin-left: auto;
     margin-right: auto;
-    width: min(90%, 700px);
-}
-
-a
-{
-    color: var(--urlColor);
+    width: min(90%, 900px);
 }
 
 body
@@ -24,55 +13,7 @@ body
     font-family: "Arimo", sans-serif;
 }
 
-code
-{
-    background-color: var(--codeColor);
-    font-family: "Cousine", monospace;
-    font-size: 0.9rem;
-}
-
-footer
-{
-    font-size: smaller;
-    padding-bottom: 1rem;
-    padding-top: 2rem;
-    text-align: center;
-}
-
-h1
-{
-    font-size: 1.8rem;
-    text-align: center;
-}
-
-h1 + p
-{
-    text-align: center;
-}
-
-h2
-{
-    font-size: 1.3rem;
-}
-
-h2::before
-{
-    content: "❡ ";
-}
-
-h3
-{
-    font-size: 1rem;
-}
-
 img
 {
     width: 100%;
-}
-
-pre
-{
-    background-color: var(--codeColor);
-    padding: 0.5rem;
-    overflow: scroll;
 }
